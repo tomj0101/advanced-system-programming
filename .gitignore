@@ -1,3 +1,4 @@
+# === C/C++ ===
 # Prerequisites
 *.d
 
@@ -50,3 +51,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# === Vagrant ===
+# General
+.vagrant/
+
+# Log files (if you are creating logs in debug mode, uncomment this)
+# *.log
