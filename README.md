@@ -11,6 +11,7 @@ Table of contents
    * [Compiler Optimization flag](#compiler-Optimization-flag)
    * [UNIX System V](#unix-system-v)
       * [IPC](#ipc)
+      * [Admin Unix Command](#admin-unix-commands)
    * [Linux Kernel](#linux-kernel)
    * [My motivation](#my-motivation)
 <!--te-->
@@ -77,6 +78,57 @@ gcc (OpenIndiana 8.4.0-oi-2) 8.4.0
 
 ```
 
+
+Admin Unix Command
+-----
+This is a good helper for your active development task on UNIX System.
+
+```bash
+# HP-UX command to get Physical Memory Information
+➥ machinfo |grep Memory
+# output:
+Memory: 130948 MB (127.88 GB)
+
+# OR
+➥ /usr/contrib/bin/machinfo |grep Memory
+# output:
+Memory: 130948 MB (127.88 GB)
+
+# OR
+➥ machinfo
+# output:
+CPU info:
+   Intel(R)  Itanium(R)  Processor 9550 (2.39 GHz, 32 MB)
+   4 cores, 8 logical processors per socket
+   6.38 GT/s QPI, CPU version D0
+          Active processor count:
+          1 socket
+          1 core
+          1 logical processor (1 per socket)
+          LCPU attribute is disabled
+
+Memory: 130948 MB (127.88 GB)
+
+Firmware info:
+   Firmware revision:  02.40
+   FP SWA driver revision: 1.23
+   IPMI is supported on this system.
+   BMC firmware revision: 1.61
+
+Platform info:
+   Model:                  "ia64 hp Integrity BL890c i4 nPar"
+   Machine ID number:      77398900-da2f-11e2-8084-dee5468e3y7f
+   Machine serial number:  SGH319V9YY
+
+OS info:
+   Nodename:  PCPEPSVS
+   Release:   HP-UX B.11.31
+   Version:   U (unlimited-user license)
+   Machine:   ia64
+   ID Number: 2000259378
+   vmunix _release_version:
+@(#) $Revision: vmunix:    B.11.31_LR FLAVOR=perf
+```
 
 Linux Kernel
 -----
