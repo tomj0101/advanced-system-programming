@@ -14,6 +14,7 @@ Table of contents
       * [Admin Unix Command](#admin-unix-commands)
    * [Linux Kernel](#linux-kernel)
    * [Installing Enterprise Linux](#installing-enterprise-linux)
+   * [Install GCC Compiler on Ubuntu/Xubuntu/Lubuntu](#install-gcc-compiler-on-ubuntu)
    * [My motivation](#my-motivation)
 <!--te-->
 
@@ -175,6 +176,24 @@ sudo dd bs=4M if=/home/developer/Downloads/CentOS-8.4.2105-x86_64-dvd1.iso of=/m
 9928966144 bytes (9.9 GB, 9.2 GiB) copied, 50.3358 s, 197 MB/s
 
 
+```
+
+Install GCC Compiler on Ubuntu/Xubuntu/Lubuntu
+-----
+```
+# C/C++ Development
+sudo apt install build-essential -y
+sudo snap install cmake --classic
+sudo apt install vim -y
+sudo apt install geany -y
+
+# Java Development
+sudo apt install default-jre -y && sudo apt install default-jdk -y
+
+# Python
+sudo apt install python3 -y
+sudo apt install python3-pip -y
+# python3 -m http.server 8080
 ```
 
 
