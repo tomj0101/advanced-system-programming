@@ -143,7 +143,7 @@ In my case is very common to find RedHat Linux Server like official OS for diffe
 Installing CentOS will work for labs and experimental development.
 ```
 # Create boot USB using Linux "Ubuntu 20.04"
-# Download CENTOS 7 DVD
+# Download CentOS 8 DVD
 wget http://mirror.math.princeton.edu/pub/centos/8.4.2105/isos/x86_64/CentOS-8.4.2105-x86_64-dvd1.iso
 
 # Find out the name of your USB drive with the lsblk command:
