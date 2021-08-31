@@ -196,6 +196,16 @@ sudo apt install python3-pip -y
 # python3 -m http.server 8080
 ```
 
+Linux Lib:
+```
+# C++ Library Development files for International Components for Unicode
+sudo apt-get install libicu-dev
+
+sudo apt install curl
+
+# development files and documentation for libcurl (OpenSSL flavour)
+sudo aptitude install libcurl4-openssl-dev
+```
 
 ### My motivation
 Be able to clearly communicate deep concepts to my team, sciences college, co-workers and why not, the rest of the world!
