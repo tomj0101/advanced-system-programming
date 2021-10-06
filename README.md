@@ -207,5 +207,12 @@ sudo apt install curl
 sudo aptitude install libcurl4-openssl-dev
 ```
 
+Linux commands:
+```
+# count files using wc
+ls | wc -l
+ls /etc | wc -l
+```
+
 ### My motivation
 Be able to clearly communicate deep concepts to my team, sciences college, co-workers and why not, the rest of the world!
