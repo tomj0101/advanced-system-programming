@@ -193,24 +193,55 @@ print "Email Sent Successfully\n";
 #install apache and cgi module
 sudo apt-get install apache2 libapache2-mod-wsgi
 sudo a2enmod wsgi
+sudo a2enmod cgi
+
+sudo vim /etc/apache2/sites-enabled/000-default
+---
+Add the following lines after the DocumentRoot line:
+         ScriptAlias /cgi-bin/ /var/cgi-bin/
+         <Directory "/var/cgi-bin">
+                 AllowOverride None
+                 Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+                 Require all granted
+         </Directory>
+
+Now you should have:
+<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www
+
+         ScriptAlias /cgi-bin/ /var/cgi-bin/
+         <Directory "/var/cgi-bin">
+                 AllowOverride None
+                 Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+                 Require all granted
+         </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
 
 sudo systemctl restart apache2
 
 cd /usr/lib/cgi-bin
 
-sudo vi /usr/lib/cgi-bin/test.pl
+sudo vim /usr/lib/cgi-bin/test.cgi
 
 ---
 #!/usr/bin/perl
-print "Content-Type: text/html\n\n";
-print ("<h1>Perl is working!</h1>");
+use strict;
+use warnings;
+ 
+print qq(Content-type: text/plain\n\n);
+ 
+print "Hi from CGI using Perl\n";
+
+--
+sudo chmod 755 /var/cgi-bin/test.cgi
 
 
-
-sudo chmod 755 /usr/lib/cgi-bin/test.pl
-
-
-curl http://172.31.8.195/cgi-bin/test.pl
+curl http://172.31.8.195/cgi-bin/test.cgi
 
 
 =cut
