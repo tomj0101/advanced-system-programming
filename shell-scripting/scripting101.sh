@@ -1,6 +1,7 @@
 #! /bin/bash
 
 # ECHO COMMAND
+echo "Welcome for the Shell scripting blueprint"
 # echo Welcome messages 1!
 # echo "Welcome messages 2!"
 # echo 'Welcome messages 2!'
@@ -13,8 +14,8 @@ NAME="Tom"
 # echo "My name is ${NAME}"
 
 # USER INPUT
-# read -p "Enter your name: " NAME
-# echo "Hello $NAME, nice to meet you!"
+#read -p "Enter your name: " NAME
+#echo "Hello $NAME, nice to meet you!"
 
 # SIMPLE IF STATEMENT
 # if [ "$NAME" == "Tom" ]
