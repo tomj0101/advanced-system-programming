@@ -46,6 +46,8 @@ key        shmid      owner      perms      bytes      nattch     status
 key        semid      owner      perms      nsems 
 
 ## Message Queue
+- Messages queues are created by a syscall
+- Each Read and write creates a syscall to the kernel (BE CAREFULLY)
 
 
 ```
