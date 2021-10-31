@@ -1,6 +1,8 @@
 #include <stdio.h>
 
 void pointerStep1();
+void genericPointer(void *x);
+
 
 int main(){
 pointerStep1();
@@ -15,6 +17,9 @@ void pointerStep1(){
 	printf("p_rate value -> mem address of rate = %lu \n",p_rate);
 	printf("p_rate value -> get value from mem address of rate = %d \n",*p_rate);
 	passingPointerToFunction(&rate);
+	genericPointer(123);
+	//genericPointer(1.56); for this work should create the function like this
+	//void genericPointer(void *x, char type), then use switch(type), finally call genericPointer(1.56,'f');
 }
 
 /*
@@ -36,4 +41,26 @@ void passingPointerToFunction(int *rate){
 int func1(int rate){
 
 return rate + 10;
+}
+
+
+/*
+ DO:
+ - DO pass variable by value if you don't want the original value altered.
+
+ DON'T:
+ - Don't pass large amounts of data by value if it isn;t necessary, You can run out of Stack space.
+ - Don't forget that a variable passed by references should be a pointer. 
+
+
+ * */
+
+
+//Type void Pointers
+//the void keywork can also be used to create a generic pointer, a pointer that can point to any type of data object.
+
+void genericPointer(void *x){
+
+printf("value of generic pinter %d\n",x);
+
 }
