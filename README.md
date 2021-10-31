@@ -386,6 +386,29 @@ Printing VFS in terminal
 
 ```
 
+### Linux Networking
+```
+The world runs on the sockets - a quote in the UNIX summit at Univ of Kansas in 1989.
+- Networking started as number of research project like:
+  - NPL network in the UK
+  - ARPANet in the USA
+  - CYCLADES in Frances
+  - European Informatics Network (EIN)
+  - IBM's Systems Network Architect
+  - Digital Equipment Corporations DECNet
+  - X.25 Protocol
+
+- Organization Like:
+  - IEEE
+  - IETF
+  - ISO
+  - CCITT / ITU
+
+Socket:
+- Endianess is the way computers store bytes in memory.
+- Big Endian, Little Endian. 
+```
+
 
 ### My motivation
 Be able to clearly communicate deep concepts to my team, sciences college, co-workers and why not, the rest of the world!
