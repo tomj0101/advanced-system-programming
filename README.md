@@ -350,6 +350,39 @@ mmap(NULL, 1837056, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fa70ce1e000
 mprotect(0x7fa70ce40000, 1658880, PROT_NONE) = 0
 
 $ strace hostname
+L1 munmap(0x7fd1c6eb6000, 39932)           = 0
+L2 brk(NULL)                               = 0x55c807862000
+L3 brk(0x55c807883000)                     = 0x55c807883000
+L4 uname({sysname="Linux", nodename="dev-vm-machine", ...}) = 0
+L5 fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0
+L6 write(1, "dev-vm-machine\n", 15dev-vm-machine
+)        = 15
+L7 exit_group(0)                           = ?
+L8 +++ exited with 0 +++
+
+analysis: in the line L4 we can see hostname internally call uname command that means is the same to run this command:
+$ uname -n
+
+
+Others system calls:
+- Exit
+- Wait
+- Read
+- Write
+- Open
+- Close
+- Waitpid
+- Getpid
+- Sync
+- Nice
+- Kill
+```
+
+### Linux Virtual File System (VFS)
+```
+$ echo "Printing VFS in terminal" > /dev/pts/0
+Printing VFS in terminal
+
 
 ```
 
