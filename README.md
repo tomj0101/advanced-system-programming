@@ -300,5 +300,59 @@ Processing triggers for man-db (2.8.5-2) ...
 Processing triggers for libc-bin (2.28-10) ...
 ```
 
+### Process on Linux
+```
+ps, top, htop
+```
+
+### Memory management
+```
+$ gcc main.c -o main
+$ size main
+   text    data     bss     dec     hex filename
+   1755     600       8    2363     93b main
+
+$ size /usr/bin/more
+   text    data     bss     dec     hex filename
+  32936    1236      64   34236    85bc /usr/bin/more
+
+$ readelf -a /usr/bin/more | more
+```
+
+### Linux SysCalls
+```
+# Linux kernel subsystems:
+- SCHED: The Process scheduler
+- MM: The memory manager
+- VFS: The Virtual File system
+- NET: The Network interface
+- IPC: The inter-Process Communication
+
+strace - trace system calls and signals
+
+$ strace -p <PID>
+$ strace -h
+
+### strace C program
+$ strace /home/tom/main
+execve("/home/tomas/main", ["/home/tom/main"], 0x7ffc7207e160 /* 20 vars */) = 0
+brk(NULL)                               = 0x55805afa4000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=39932, ...}) = 0
+mmap(NULL, 39932, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fa70cfe1000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260A\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1824496, ...}) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fa70cfdf000
+mmap(NULL, 1837056, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fa70ce1e000
+mprotect(0x7fa70ce40000, 1658880, PROT_NONE) = 0
+
+$ strace hostname
+
+```
+
+
 ### My motivation
 Be able to clearly communicate deep concepts to my team, sciences college, co-workers and why not, the rest of the world!
