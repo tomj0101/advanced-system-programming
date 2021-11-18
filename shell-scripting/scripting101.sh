@@ -42,6 +42,15 @@ NAME="Tom"
 #   echo "Your name is NOT Tom or Vike"
 # fi
 
+# check if $ORACLE_HOME or $JAVA_HOME variable is a empty string
+# if [ -z "$ORACLE_HOME" ]  ||  [ -z "$JAVA_HOME" ] 
+# then
+#   echo "\$ORACLE_HOME or \$JAVA_HOME are empty"
+#   exit 1
+# else 
+#   echo "Put your code here......."
+# fi
+
 # COMPARISON
 # NUM1=40
 # NUM2=34
