@@ -409,6 +409,19 @@ Socket:
 - Big Endian, Little Endian. 
 ```
 
+### Unix/Linux Tools for debug
+```
+ldd - print shared object dependencies
+dev> ldd /bin/ls
+
+/bin/ls:
+        libxcurses.so.1 =>      /usr/lib/hpux32/libxcurses.so.1
+        libc.so.1 =>    /usr/lib/hpux32/libc.so.1
+        libdl.so.1 =>   /usr/lib/hpux32/libdl.so.1
+
+
+```
+
 
 ### My motivation
 Be able to clearly communicate deep concepts to my team, sciences college, co-workers and why not, the rest of the world!
