@@ -419,7 +419,19 @@ dev> ldd /bin/ls
         libc.so.1 =>    /usr/lib/hpux32/libc.so.1
         libdl.so.1 =>   /usr/lib/hpux32/libdl.so.1
 
+nm - print name list of common object file.
 
+objdump - display information from object files.
+
+addr2line - convert addresses into file names and line numbers.
+
+lsof - list open files
+
+readelf - Displays information about ELF files.
+
+od, xd - octal and hexadecimal dump.
+
+References: https://www.techbeamers.com/essential-linux-commands-programmers/
 ```
 
 
