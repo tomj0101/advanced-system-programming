@@ -2,6 +2,7 @@
 
 void pointerStep1();
 void genericPointer(void *x);
+void checkAllocationMemory();
 
 
 int main(){
@@ -20,6 +21,7 @@ void pointerStep1(){
 	genericPointer(123);
 	//genericPointer(1.56); for this work should create the function like this
 	//void genericPointer(void *x, char type), then use switch(type), finally call genericPointer(1.56,'f');
+	checkAllocationMemory();
 }
 
 /*
@@ -63,4 +65,17 @@ void genericPointer(void *x){
 
 printf("value of generic pinter %d\n",x);
 
+}
+
+/*check if allocation successful*/
+#define BLOCKSIZE 30000
+void checkAllocationMemory(){
+	void *ptr1;
+	ptr1 = malloc(BLOCKSIZE);
+	if(ptr1 != NULL){
+		printf("allocation of %d bytes successful. \n", BLOCKSIZE);
+	}else{
+		printf("attemp to allocate %d bytes failed. \n", BLOCKSIZE);
+		exit(1);
+	}
 }
