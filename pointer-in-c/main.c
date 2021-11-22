@@ -1,12 +1,17 @@
 #include <stdio.h>
 
+#include <stdlib.h> //pid_t
+
 void pointerStep1();
 void genericPointer(void *x);
 void checkAllocationMemory();
+void processAndSignals(void);
 
 
 int main(){
-pointerStep1();
+	//pointerStep1();
+	checkAllocationMemory();
+	processAndSignals();
 return 0;
 }
 
@@ -18,10 +23,10 @@ void pointerStep1(){
 	printf("p_rate value -> mem address of rate = %lu \n",p_rate);
 	printf("p_rate value -> get value from mem address of rate = %d \n",*p_rate);
 	passingPointerToFunction(&rate);
-	genericPointer(123);
+	//genericPointer(123);
 	//genericPointer(1.56); for this work should create the function like this
 	//void genericPointer(void *x, char type), then use switch(type), finally call genericPointer(1.56,'f');
-	checkAllocationMemory();
+
 }
 
 /*
@@ -48,14 +53,7 @@ return rate + 10;
 
 /*
  DO:
- - DO pass variable by value if you don't want the original value altered.
-
- DON'T:
- - Don't pass large amounts of data by value if it isn;t necessary, You can run out of Stack space.
- - Don't forget that a variable passed by references should be a pointer. 
-
-
- * */
+ - DO pass variable by 	int BLOCKSIZE;
 
 
 //Type void Pointers
@@ -78,4 +76,12 @@ void checkAllocationMemory(){
 		printf("attemp to allocate %d bytes failed. \n", BLOCKSIZE);
 		exit(1);
 	}
+}
+
+void processAndSignals(void){
+	pid_t pid, ppid;
+	pid = getpid();
+	ppid = getppid();
+	printf("My pid = %d and my Parent's pid = %d \n", pid, ppid);
+
 }
