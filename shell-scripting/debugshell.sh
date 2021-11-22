@@ -1,0 +1,7 @@
+#/bin/sh
+set -x #debugging
+SYMBOLS="F"
+DESCRIPTION="Ford Motor Company"
+PREVIOUS_CLOSE=19.39
+
+printf "$SYMBOLS:NYSE \n$DESCRIPTION \nPREVIOUS CLOSE: \$$PREVIOUS_CLOSE\n"
