@@ -84,4 +84,18 @@ void processAndSignals(void){
 	ppid = getppid();
 	printf("My pid = %d and my Parent's pid = %d \n", pid, ppid);
 
+	/* if you run in the same terminal the proccess id changes but the parent don't changes
+
+	My pid = 1515208 and my Parent's pid = 935052 
+	My pid = 1515209 and my Parent's pid = 935052 
+
+	$ps 935052
+	PID TTY      STAT   TIME COMMAND
+ 	935052 pts/0    Ss     0:00 /bin/bash
+
+	ps u # -u userlist:Select by effective user ID (EUID) or name.  This selects the processes whose effective user name or ID is in userlist 
+	ps aux #lis all process for all user,session
+	
+	*/
+
 }
