@@ -59,7 +59,9 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 #pass in Github key setup
 https://github.com/settings/keys
 
-
+# other version control.
+sudo apt install mercurial -y
+sudo apt install subversion -y
 ```
 
 ### Install C/C++ compiler.
@@ -69,14 +71,24 @@ https://github.com/settings/keys
 sudo apt install build-essential -y
 # (1 hour 30 min for compiled the library)
 # (1 hour 30 min for compiled the program)
-sudo snap install cmake --classic
+sudo apt install cmake -y
 # RESTapi framework for C++
 # https://microsoft.github.io/cpprestsdk/index.html
 sudo apt-get install libcpprest-dev -y
-#QT Creator
-# Qt: can't find -lGL error.... solution: libgl1-mesa-dev
-sudo apt install libgl1-mesa-dev -y
 
-#VIM editor
-sudo apt install vim -y
+# Install Java for Oracle applications
+sudo apt install default-jre -y && sudo apt install default-jdk -y
+
+
+# install pip for python 2.7 (came install by default in Ubuntu)
+sudo apt install python-pip -y
+# python3 -m http.server 8080
 ```
+
+
+### Install Oracle Database XE (Oracle 18c XE )
+```
+
+```
+
+
