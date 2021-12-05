@@ -192,8 +192,58 @@ sudo ln -s /usr/bin/awk /bin/awk
 sudo mkdir /var/lock/subsys 
 sudo touch /var/lock/subsys/listener
 
-# Install Oracle
+###### Install Oracle ###### 
+#1. Install the oracle DBMS using the command:
 sudo dpkg --install oracle-database-xe-21c_1.0-2_amd64.deb
+
+#2.Configure Oracle using the command:
+sudo /etc/init.d/oracle-xe configure 
+
+#3.Setup environment variables by editting your .bashrc file:
+vim ~/.bashrc
+
+#4.Add the following lines to the end of the file:
+```
+export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe
+export ORACLE_SID=XE
+export NLS_LANG=`$ORACLE_HOME/bin/nls_lang.sh`
+export ORACLE_BASE=/u01/app/oracle
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
+export PATH=$ORACLE_HOME/bin:$PATH
+```
+
+#5.Load the changes by executing your profile:
+. ~/.bashrc
+
+#6.Start the Oracle 21c XE:
+sudo service oracle-xe start
+
+#7.Add user YOURUSERNAME to group dba using the command:
+sudo usermod -a -G dba $USER
+
+###### Oracle basic setup for work ###### 
+#1. Start the Oracle XE 21c server using the command:
+sudo service oracle-xe start
+
+#2. Start command line shell as the system admin using the command:
+sqlplus sys as sysdba
+
+#3. Create a regular user account in Oracle using the SQL command
+create user USERNAME identified by PASSWORD;
+
+# Replace USERNAME and PASSWORD with the username and password of your choice. Please remember this username and password. If you had error executing the above with a message about resetlogs, then execute the following SQL command and try again:
+alter database open resetlogs;
+
+#4. Grant privileges to the user account using the SQL command:
+grant connect, resource to USERNAME;
+
+#5. Exit the sys admin shell using the SQL command:
+exit;
+
+#6. Start the commandline shell as a regular user using the command:
+sqlplus
+
+
 
 # Resource:
 [Answers 2]
