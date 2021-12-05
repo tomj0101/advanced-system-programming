@@ -11,6 +11,11 @@ ssh dev@server
 #GCP ssh connection
 gcloud beta compute ssh --zone "us-central1-a" "vm-ubuntu"  --project "dev"
 
+#GCP: Listing bucket
+gsutil ls
+gsutil ls gs://<BUCKET_NAME>/
+gsutil cp gs://<BUCKET_NAME>/oracle-database-xe-21c_1.0-2_amd64.deb .
+
 ```
 ### Pre-setup
 ```
