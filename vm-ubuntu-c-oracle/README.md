@@ -22,6 +22,9 @@ sudo apt install htop -y
 sudo apt install curl -y 
 sudo apt install wget -y
 
+#compress and uncompress
+sudo apt install zip unzip -y
+
 #Copy text to clipboard
 sudo apt install xclip -y
 
@@ -93,18 +96,79 @@ sudo apt install python-pip -y
 mkdir software && cd software
 
 # click in download using the browser for active the session, then pause the download and continue in the terminal
-https://www.oracle.com/database/technologies/xe18c-downloads.html
+[ Oracle Database 21c Express Edition for Linux x64 ( OL8 )]
+https://www.oracle.com/database/technologies/xe-downloads.html
 
 # download from the terminal
-wget https://download.oracle.com/otn-pub/otn_software/db-express/oracle-database-xe-18c-1.0-1.x86_64.rpm?AuthParam=1638679394_e2c61d7bbb9d058d626553b8f9864ea3
+wget https://download.oracle.com/otn-pub/otn_software/db-express/oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm?AuthParam=1638683626_b792d9b05eb61a0190315b759484187c
+mv 'oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm?AuthParam=1638683626_b792d9b05eb61a0190315b759484187c' 'oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm'
+
 
 # Pre-Configuration before install
 
 vi /etc/hosts
 10.128.0.6  odb-1.localdomain  odb-1 # Oracle Database server
 
+sudo apt-get install alien libaio1 unixodbc
 
-# Automatic Setup
+sudo alien --scripts -d oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm
+
+sudo pico /sbin/chkconfig
+---
+#!/bin/bash
+# Oracle 21c  XE installer chkconfig hack for Ubuntu
+file=/etc/init.d/oracle-xe
+if [[ ! `tail -n1 $file | grep INIT` ]]; then
+    echo >> $file
+    echo '### BEGIN INIT INFO' >> $file
+    echo '# Provides: OracleXE' >> $file
+    echo '# Required-Start: $remote_fs $syslog' >> $file
+    echo '# Required-Stop: $remote_fs $syslog' >> $file
+    echo '# Default-Start: 2 3 4 5' >> $file
+    echo '# Default-Stop: 0 1 6' >> $file
+    echo '# Short-Description: Oracle 21c Express Edition' >> $file
+    echo '### END INIT INFO' >> $file
+fi
+update-rc.d oracle-xe defaults 80 01
+---
+
+sudo chmod 755 /sbin/chkconfig  
+
+sudo pico /etc/sysctl.d/60-oracle.conf
+---
+# Oracle 11g XE kernel parameters 
+fs.file-max=6815744  
+net.ipv4.ip_local_port_range=9000 65000  
+kernel.sem=250 32000 100 128 
+kernel.shmmax=536870912 
+----
+
+sudo cat /etc/sysctl.d/60-oracle.conf 
+
+sudo service procps start
+
+sudo sysctl -q fs.file-max
+
+sudo pico /etc/rc2.d/S01shm_load
+---
+#!/bin/sh
+case "$1" in
+start)
+    mkdir /var/lock/subsys 2>/dev/null
+    touch /var/lock/subsys/listener
+    rm /dev/shm 2>/dev/null
+    mkdir /dev/shm 2>/dev/null
+*)
+    echo error
+    exit 1
+    ;;
+
+esac 
+---
+
+sudo ln -s /usr/bin/awk /bin/awk 
+sudo mkdir /var/lock/subsys 
+sudo touch /var/lock/subsys/listener
 
 # Resource:
 http://sampig.github.io/tutorial/2019/06/17/install-oracle-express-in-ubuntu
