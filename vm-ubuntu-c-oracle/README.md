@@ -229,7 +229,7 @@ export ORACLE_HOME=/opt/oracle/product/21c/dbhomeXE
 
 export ORACLE_SID=XE
 
-# export NLS_LANG=`$ORACLE_HOME/bin/nls_lang.sh`
+############### export NLS_LANG=`$ORACLE_HOME/bin/nls_lang.sh`
 
 export ORACLE_BASE=/opt/oracle
 
@@ -269,13 +269,14 @@ SYSDATE
 05-DEC-21
 
 #3. Create a regular user account in Oracle using the SQL command
-create user USERNAME identified by PASSWORD;
+alter session set "_oracle_script"=true;   # just do that in dev env.
+create user dev1 identified by dev1;
 
 # Replace USERNAME and PASSWORD with the username and password of your choice. Please remember this username and password. If you had error executing the above with a message about resetlogs, then execute the following SQL command and try again:
 alter database open resetlogs;
 
 #4. Grant privileges to the user account using the SQL command:
-grant connect, resource to USERNAME;
+grant connect, resource to dev1;
 
 #5. Exit the sys admin shell using the SQL command:
 exit;
@@ -342,4 +343,72 @@ The total execution Time is 20 min 18 sec
 
 ```
 
+### Oracle help command
+```
+# check the database version
+$sqlplus
+SELECT banner FROM v$version WHERE ROWNUM = 1;
+output:
+BANNER
+--------------------------------------------------------------------------------
+Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+
+# check the DB instance name
+Select * From v$instance;
+
+# list all the table by schema:
+select owner, table_name from all_tables order by owner;
+
+# check the ORACLE_SID
+select sys_context('userenv','instance_name') from dual; 
+
+# create table space ad user user
+alter session set "_oracle_script"=true;   # just do that in dev env.
+DROP USER dev1 CASCADE;
+
+CREATE TABLESPACE tbs1 
+   DATAFILE 'tbs1_data.dbf' 
+   SIZE 1m;
+
+CREATE PROFILE app_user LIMIT 
+   SESSIONS_PER_USER          UNLIMITED 
+   CPU_PER_SESSION            UNLIMITED 
+   CPU_PER_CALL               3000 
+   CONNECT_TIME               45 
+   LOGICAL_READS_PER_SESSION  DEFAULT 
+   LOGICAL_READS_PER_CALL     1000 
+   PRIVATE_SGA                15K
+   COMPOSITE_LIMIT            5000000; 
+
+GRANT CREATE SESSION TO dev1;
+
+sqlplus dev@XE
+   
+CREATE USER dev1
+    IDENTIFIED BY dev1 
+    DEFAULT TABLESPACE tbs1 
+    QUOTA 10M ON tbs1 
+    TEMPORARY TABLESPACE temp
+    QUOTA 5M ON system 
+    PROFILE app_user;
+
+# create table
+CREATE TABLE DEPT(  
+  deptno     number(2,0),  
+  dname      varchar2(14),  
+  loc        varchar2(13),  
+  constraint pk_dept primary key (deptno)  
+);
+
+insert into DEPT (DEPTNO, DNAME, LOC)
+values(10, 'ACCOUNTING', 'NEW YORK');
+
+insert into DEPT  
+values(20, 'RESEARCH', 'DALLAS');
+
+insert into DEPT  
+values(30, 'SALES', 'CHICAGO');
+
+references: https://livesql.oracle.com/apex/livesql/file/content_O5AEB2HE08PYEPTGCFLZU9YCV.html
+```
 
