@@ -204,7 +204,7 @@ https://askubuntu.com/questions/566734/how-to-install-oracle-11gr2-on-ubuntu-14-
 
 
 ### Convert oracle rpm to deb with shell scripting (output)
-The total execition Time is 20 min 18 sec
+The total execution Time is 20 min 18 sec
 ```
 # Machine hardware
 Laptop Dell Latitude E5470
