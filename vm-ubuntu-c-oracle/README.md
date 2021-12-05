@@ -111,7 +111,11 @@ vi /etc/hosts
 
 sudo apt-get install alien libaio1 unixodbc
 
-sudo alien --scripts -d oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm
+nohup sudo alien --scripts -d oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm &
+
+# review if is executing
+ps -ef|grep rpm2cpio
+cat nohup.out|wc -l
 
 sudo pico /sbin/chkconfig
 ---
@@ -171,7 +175,8 @@ sudo mkdir /var/lock/subsys
 sudo touch /var/lock/subsys/listener
 
 # Resource:
-http://sampig.github.io/tutorial/2019/06/17/install-oracle-express-in-ubuntu
+[Answers 2]
+https://askubuntu.com/questions/566734/how-to-install-oracle-11gr2-on-ubuntu-14-04
 
 
 ```
