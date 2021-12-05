@@ -24,7 +24,7 @@ sudo apt install xclip -y
 #Exec Parallel command
 sudo apt install parallel -y
 #Parsing JSON on CLI 
-sudo snap install jq
+sudo apt install jq -y
 #Install ab - Command Load Test tool with Apache util
 sudo apt install apache2-utils -y
 ```
