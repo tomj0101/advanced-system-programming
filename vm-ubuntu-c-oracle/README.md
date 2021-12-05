@@ -179,11 +179,57 @@ sudo touch /var/lock/subsys/listener
 # Install Oracle
 sudo dpkg --install oracle-database-xe-21c_1.0-2_amd64.deb
 
-
 # Resource:
 [Answers 2]
 https://askubuntu.com/questions/566734/how-to-install-oracle-11gr2-on-ubuntu-14-04
 
+
+```
+
+
+### Convert oracle rpm to deb with shell scripting (output)
+The total execition Time is 20 min 18 sec
+```
+# Machine hardware
+Laptop Dell Latitude E5470
+CPU: Intel CORE i5 (4 cpu)
+Memory: 31GB
+Swp: 1GB
+Disk size: 1TB/1000GB
+
+# Run the conversion (script in the repo)
+$ ./convert-oracle-rpm-to-deb.sh 
+Sun 05 Dec 2021 12:44:26 PM AST
+=== Conversion start ===
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+warning: oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID ad986da3: NOKEY
+oracle-database-xe-21c_1.0-2_amd64.deb generated
+=== Conversion finished ===
+total 4492152
+drwxrwxr-x 2 developer developer       4096 Mar  1  2021 ngrok-stable-linux-amd64
+-rw-rw-r-- 1 developer developer   71403603 Jun 20 06:45 kafka_2.13-2.8.0.tgz
+drwxr-xr-x 8 developer developer       4096 Jun 20 06:46 kafka_2.13-2.8.0
+drwxrwxrwx 3 developer developer       4096 Jun 24 19:37 CLion-2021.1.2
+-rw-rw-r-- 1 developer developer 2339651768 Dec  5 12:25 oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm
+-rwxrwxr-x 1 developer developer        322 Dec  5 12:44 convert-oracle-rpm-to-deb.sh
+-rw-r--r-- 1 root      root      2188876652 Dec  5 13:04 oracle-database-xe-21c_1.0-2_amd64.deb
+Sun 05 Dec 2021 01:04:44 PM AST
+The total execution Time is 20 min 18 sec
 
 ```
 
