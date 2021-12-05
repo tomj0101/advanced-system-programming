@@ -88,6 +88,17 @@ sudo apt install python-pip -y
 
 ### Install Oracle Database XE (Oracle 18c XE )
 ```
+# Pre-Configuration before install
+
+vi /etc/hosts
+10.128.0.6  odb-1.localdomain  odb-1 # Oracle Database server
+
+
+# Automatic Setup
+
+# Resource:
+http://sampig.github.io/tutorial/2019/06/17/install-oracle-express-in-ubuntu
+
 
 ```
 
