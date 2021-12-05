@@ -11,4 +11,4 @@ echo "=== Conversion finished ==="
 ls -lrt
 date 
 ELAPSED_TIME=$(($SECONDS - $START_TIME))
-echo "The total execition Time is $(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"
+echo "The total execution Time is $(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"
