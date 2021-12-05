@@ -415,5 +415,22 @@ insert into DEPT
 values(30, 'SALES', 'CHICAGO');
 
 references: https://livesql.oracle.com/apex/livesql/file/content_O5AEB2HE08PYEPTGCFLZU9YCV.html
+
+# TNSNAMES.ora config
+sudo vi $ORACLE_HOME/network/admin/tnsnames.ora
+```
+DEV1=
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = odb-1)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = DEV1)
+    )
+  )
+```
+
+tnsping odb-1
+tnsping dev1
 ```
 
