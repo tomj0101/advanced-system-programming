@@ -116,6 +116,7 @@ nohup sudo alien --scripts -d oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm &
 # review if is executing
 ps -ef|grep rpm2cpio
 cat nohup.out|wc -l
+ps -ef|grep "sudo alien --scripts -d oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm"
 
 sudo pico /sbin/chkconfig
 ---
