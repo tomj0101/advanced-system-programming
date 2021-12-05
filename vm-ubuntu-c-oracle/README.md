@@ -1,6 +1,17 @@
 # VM Ubuntu C/C++ Oracle
 This VM is for C/C++ Developer that develop the main code connect to Oracle Database and need an playground.
 
+
+
+### ssh connection
+```
+#normal server
+ssh dev@server
+
+#GCP ssh connection
+gcloud beta compute ssh --zone "us-central1-a" "vm-ubuntu"  --project "dev"
+
+```
 ### Pre-setup
 ```
 #check OS Update
