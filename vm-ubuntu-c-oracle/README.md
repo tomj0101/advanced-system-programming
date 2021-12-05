@@ -111,6 +111,7 @@ vi /etc/hosts
 
 sudo apt-get install alien libaio1 unixodbc
 
+# take 2 hours to convert from rpm to deb oracle
 nohup sudo alien --scripts -d oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm &
 
 # review if is executing
@@ -174,6 +175,10 @@ esac
 sudo ln -s /usr/bin/awk /bin/awk 
 sudo mkdir /var/lock/subsys 
 sudo touch /var/lock/subsys/listener
+
+# Install Oracle
+sudo dpkg --install oracle-database-xe-21c_1.0-2_amd64.deb
+
 
 # Resource:
 [Answers 2]
