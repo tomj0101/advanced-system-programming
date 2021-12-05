@@ -20,6 +20,7 @@ sudo apt install lame -y
 sudo apt install htop -y
 
 sudo apt install curl -y 
+sudo apt install wget -y
 
 #Copy text to clipboard
 sudo apt install xclip -y
@@ -88,6 +89,15 @@ sudo apt install python-pip -y
 
 ### Install Oracle Database XE (Oracle 18c XE )
 ```
+# download 2.3 GB of Oracle XE install
+mkdir software && cd software
+
+# click in download using the browser for active the session, then pause the download and continue in the terminal
+https://www.oracle.com/database/technologies/xe18c-downloads.html
+
+# download from the terminal
+wget https://download.oracle.com/otn-pub/otn_software/db-express/oracle-database-xe-18c-1.0-1.x86_64.rpm?AuthParam=1638679394_e2c61d7bbb9d058d626553b8f9864ea3
+
 # Pre-Configuration before install
 
 vi /etc/hosts
