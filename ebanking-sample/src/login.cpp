@@ -65,7 +65,7 @@ void Login:: head()
 
     system("read -n1 -r -p \"\033[3;31m\n\n                                            Press any key to continue...\033[0m\"  key");
     /*
-       cout<<endl<<"\033[1;47m                                                                                                        Copyright(c)All Rights Reserved by saharabank.com                                                                                                                                                            "<<RESET<<endl;
+       cout<<endl<<"\033[1;47m                                                                                                        Copyright(c)All Rights Reserved by ebanking                                                                                                                                                            "<<RESET<<endl;
        */
     system("sleep 0.1s");
     system("sleep 0.1");
@@ -76,6 +76,7 @@ void Login:: head()
     cout<<" .";
     system("sleep 0.1s");
     cout<<endl<<RESET;
+    
 }
 
 void Login::chooseDesignation()
@@ -88,7 +89,7 @@ void Login::chooseDesignation()
     {
 	system("clear");
 	cout<<"\x1b[41m                                                                                                       \x1b[0m"<<endl;
-	cout<<"\033[3;30m                         *************Welcome to SAHARA BANKING**************\033[0m"<<endl;
+	cout<<"\033[3;30m                         *************Welcome to E-BANKING**************\033[0m"<<endl;
 	cout<<endl<<"\033[3;30m                           ********CORE BANKING MANAGEMENT SYSTEM*********\033[0m"<<endl;
 	cout<<endl<<"\033[3;30m                               *****************************************\033[0m"<<endl;
 	cout<<"\x1b[42m                                                                                                       \x1b[0m"<<endl;
@@ -146,7 +147,7 @@ void Login::validateCredentials(int rank)
     string password;
     system("clear");
     cout<<"\x1b[41m                                                                                                       \x1b[0m"<<endl;
-    cout<<"\033[3;30m                         *************Welcome to SAHARA BANKING**************\033[0m"<<endl;
+    cout<<"\033[3;30m                         *************Welcome to E-BANKING**************\033[0m"<<endl;
     cout<<endl<<"\033[3;30m                           ********CORE BANKING MANAGEMENT SYSTEM*********\033[0m"<<endl;
     cout<<endl<<"\033[3;30m                               *****************************************\033[0m"<<endl;
     cout<<"\x1b[42m                                                                                                       \x1b[0m"<<endl;

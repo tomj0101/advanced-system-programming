@@ -13,7 +13,7 @@ void Bankemployee :: header()
 {
     system("clear");
     cout<<"\x1b[41m                                                                                                       \x1b[0m"<<endl;
-    cout<<"\033[3;30m                         *************Welcome to SAHARA BANKING**************\033[0m"<<endl;
+    cout<<"\033[3;30m                         *************Welcome to E-BANKING**************\033[0m"<<endl;
     cout<<endl<<"\033[3;30m                           ********CORE BANKING MANAGEMENT SYSTEM*********\033[0m"<<endl;
     cout<<endl<<"\033[3;30m                               *****************************************\033[0m"<<endl;
     cout<<"\x1b[42m                                                                                                       \x1b[0m"<<endl<<endl;
