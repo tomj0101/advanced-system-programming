@@ -1,0 +1,154 @@
+create table Bank
+(
+bank_id number(10) primary key,
+region varchar2(20),
+report_bid number(10),
+balance number(20,2),
+blevel varchar2(10),
+address varchar2(20)
+);
+/
+ 
+Create table employeedetails(
+emp_id number(10) primary key,
+emp_fname varchar2(20) not null,
+emp_lname varchar2(20) not null,
+doj date,
+address varchar2(20),
+work_bid number(20) not null,
+designation varchar2(20),
+rank number(10),
+report_hid number(20),
+password varchar2(20),
+salary number(10),
+region varchar2(10)
+);
+
+Create table fund_transfer(
+amount number(20,2),
+timestamp date,
+from_bid number(20),
+to_bid number(20)
+);
+
+create table customer
+(
+cust_id number(10) primary key,
+age number(3),
+state number(2),
+cust_name varchar2(20),
+cust_add varchar2(20),
+cust_mobnumber varchar2(40),
+cust_pancardid varchar2(20),
+cust_voterid varchar2(20));
+/
+
+Create table cust_account(
+cust_id number(10) ,
+bank_id number(20) ,
+balance number(15,2),
+acc_type varchar2(10),
+rate number(20,2),
+duration number(5),
+acc_no number(10) primary key
+mini_balance(10),
+service number(2)
+
+);
+/
+
+Create table cust_transaction(
+transaction_id number(20),
+type varchar2(10),
+amount number(15,2),
+sender_acc number(10),
+receiver_acc number(10),
+timestamp date
+);
+/
+
+ 
+Create table locker_info(
+locker_id number(4) unique,
+bank_id number(20),
+locker_type varchar2(20),
+bidding_amount number(20,2),
+cust_id number(20)
+);
+
+
+Create table bidding(
+cust_id number(20),
+bidding_amount number(10),
+locker_type varchar(10),
+bank_id number(10);
+);
+
+Create table bidding_info(
+bank_id number(20) references bank(bank_id),
+locker_type varchar2(10),
+min_amt number(10),
+availability number(4),
+total number(4)
+);
+
+create table report(
+read number(1),
+sender_bid number(20),
+receiver_bid number(20),
+message varchar(50),
+message_no number
+);
+
+create table chequebook(
+acc_no number(20),
+check_id number(10),
+timestamp date
+);
+
+create table foreignex(
+cust_id number(20),
+bank_id number(20),
+type number(1),
+rupees number(20),
+dollar number(10),
+);
+
+
+create table foreignex_info(
+type number(10),
+rupees number(10),
+profit number(10)
+);
+
+create table interest_issue
+(
+quarter number(10),
+year number(10));
+
+
+create table  track_balance_tab
+( acc_no number(20),
+balance number(20,2),
+timestamp date);
+
+
+ create sequence cheque_sequence
+  2  start with 6001
+  3  increment by 1
+  4  maxvalue 9999;
+
+create sequence bseq increment by 1 start with 1000;
+
+create sequence message_seq increment by 1 start with 1;
+
+create sequence empid increment by 1 start with 1;
+
+create sequence acc_no increment by 1 start with 3001;
+
+create sequence cust_sequence increment by 1 start with 2001;
+
+create sequence trans_sequence increment by 1 start with 5000;
+create sequence cheque_sequence increment by 1 start with  6000;
+
+create sequence lock_sequence increment by 1 start with 7000;

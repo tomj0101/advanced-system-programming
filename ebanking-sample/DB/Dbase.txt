@@ -1,0 +1,32 @@
+insert into bank values(1000,'Central',0,100000000,1,'10-CentralPark');
+insert into bank values(1001,'North',1000,5000000,2,'33-Delhi');
+insert into bank values(1002,'South',1000,5000000,2,'22-Chennai');
+insert into bank values(1003,'East',1000,5000000,2,'44-Kolkata');
+insert into bank values(1004,'West',1000,5000000,2,'22-Mumbai');
+insert into bank values(1005,'North',1001,250000,3,'10-agra');
+insert into bank values(1006,'South',1002,250000,3,'9-tanjore');
+insert into bank values(1007,'East',1003,250000,3,'23-assam');
+insert into bank values(1008,'West',1004,250000,3,'44-ahmedabad');
+
+
+ insert into employeedetails values(1,'Akrati','Arora','10-aug-2000','10-CentralPark',1000,'General Manager',1,0,1000000,'pass','Central');
+ insert into employeedetails values(2,'Anshuman','Shukla','20-feb-2000','33-Delhi',1001,'North Regional Manager',2,1,500000,'pass','North');
+ insert into employeedetails values(3,'Nitin','Malviya','18-jul-1993','22-Chennai',1002,'South Regional Manager',2,1,500000,'pass','South');
+ insert into employeedetails values(4,'Preeti','L','10-feb-1993','44-Kolkata',1003,'East  Regional Manager',2,1,500000,'pass','East');
+insert into employeedetails values(5,'Priyanka','Naikade','11-jan-2000','22-Mumbai',1004,'West Regional Manager',2,1,500000,'pass','West');
+insert into employeedetails values(10,'Anand','P','11-jan-2000','22-Mumbai',1004,'Clerk',4,5,5000,'pass','West');
+
+
+ insert into customer values(2000,30,1,'Priya','Central Park',9003467589,'cizppe1234','vote123456');
+ insert into customer values(2001,25,1,'Rahul','21/3 Cafet road',9023456781,'swer123456','vote987654');
+ insert into customer values(2002,43,1,'Omkar','10,Zoing chu road',9245783467,'qwert67890','vote123555');
+ insert into customer values(2003,60,1,'Akash','35-Delhi',9567834567,'abcdef12345','vote999999');
+
+
+
+ insert into  cust_account values(2000,1004,5000,'SS',0,0,3000,0,0);
+insert into  cust_account values(2001,1004,100000,'SNS',4.5,0,3001,5000,0);
+insert into  cust_account values(2002,1004,100000,'SNS',4.5,0,3002,10000,0);
+insert into  cust_account values(2000,1004,50000,'CA',0,0,3003,0,1);
+ insert into  cust_account values(2000,1004,50000,'FD',7,1,3005,10000,0);
+
