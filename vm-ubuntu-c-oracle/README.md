@@ -102,6 +102,12 @@ $ sudo apt install default-jre -y && sudo apt install default-jdk -y
 
 # install pip for python 2.7 (came install by default in Ubuntu)
 $ sudo apt install python-pip -y
+
+# install python3 for use new module like cx_oracle
+$ sudo apt install python3 -y
+$ sudo apt install python3-pip -y
+python3 --version
+pip3 --version
 # python3 -m http.server 8080
 ```
 
