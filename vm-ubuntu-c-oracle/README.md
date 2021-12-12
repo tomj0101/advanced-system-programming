@@ -274,6 +274,23 @@ SYSDATE
 ---------
 05-DEC-21
 
+#2.1 if get the net messages, then start the instance:
+ERROR at line 1:
+ORA-01034: ORACLE not available
+Process ID: 0
+Session ID: 0 Serial number: 0
+
+SQL> start
+ORACLE instance started.
+
+Total System Global Area 1610612080 bytes
+Fixed Size                  9686384 bytes
+Variable Size             419430400 bytes
+Database Buffers         1174405120 bytes
+Redo Buffers                7090176 bytes
+Database mounted.
+Database opened.
+
 #3. Create a regular user account in Oracle using the SQL command
 alter session set "_oracle_script"=true;   # just do that in dev env.
 create user dev1 identified by dev1;
