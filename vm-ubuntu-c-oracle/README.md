@@ -318,7 +318,7 @@ https://askubuntu.com/questions/566734/how-to-install-oracle-11gr2-on-ubuntu-14-
 ```
 
 
-### Convert oracle rpm to deb with shell scripting (output)
+### AVG Time "dependent of the hardware power" Convert oracle rpm to deb with shell scripting (output)
 The total execution Time is 20 min 18 sec
 ```
 # Machine hardware
