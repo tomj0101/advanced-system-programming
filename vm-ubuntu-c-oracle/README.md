@@ -264,7 +264,8 @@ sudo usermod -a -G dba $USER
 
 ###### Oracle basic setup for work ###### 
 #1. Start the Oracle XE 21c server using the command:
-sudo service oracle-xe start
+#sudo service oracle-xe start
+sudo service oracle-xe-21c start
 
 #2. Start command line shell as the system admin using the command:
 sqlplus sys as sysdba
