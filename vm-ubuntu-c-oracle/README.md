@@ -252,6 +252,9 @@ export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
 export PATH=$ORACLE_HOME/bin:$PATH
 ---
 
+#validate
+. ~/.bashrc
+
 # update bashrc
 $ source ~/.bashrc
 
