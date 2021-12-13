@@ -32,6 +32,9 @@ $ sudo apt install lame -y
 
 ### Dev utility
 ```
+#Text editor
+sudo apt install vim -y
+
 # process monitor
 $ sudo apt install htop -y
 
