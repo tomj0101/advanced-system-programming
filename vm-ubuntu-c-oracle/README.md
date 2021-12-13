@@ -388,7 +388,7 @@ BANNER
 Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
 
 # check the DB instance name
-Select * From v$instance;
+select * From v$instance;
 
 # list all the table by schema:
 select owner, table_name from all_tables order by owner;
@@ -399,6 +399,10 @@ select sys_context('userenv','instance_name') from dual;
 # create table space ad user user
 alter session set "_oracle_script"=true;   # just do that in dev env.
 DROP USER dev1 CASCADE;
+
+# Create a regular user account in Oracle using the SQL command
+alter session set "_oracle_script"=true;   # just do that in dev env.
+create user dev1 identified by dev1;
 
 CREATE TABLESPACE tbs1 
    DATAFILE 'tbs1_data.dbf' 
