@@ -133,6 +133,7 @@ $ mv 'oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm?AuthParam=1638683626_b792d9b05
 $ sudo vim /etc/hosts
 ---
 127.0.0.1 dev1.localdomain dev1 # Oracle Database server
+---
 
 $ sudo apt install alien libaio1 unixodbc
 
@@ -144,7 +145,7 @@ $ ps -ef|grep rpm2cpio
 $ cat nohup.out|wc -l
 $ ps -ef|grep "sudo alien --scripts -d oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm"
 
-$ sudo pico /sbin/chkconfig
+$ sudo vim /sbin/chkconfig
 ---
 #!/bin/bash
 # Oracle 21c  XE installer chkconfig hack for Ubuntu
@@ -165,7 +166,7 @@ update-rc.d oracle-xe defaults 80 01
 
 $ sudo chmod 755 /sbin/chkconfig  
 
-$ sudo pico /etc/sysctl.d/60-oracle.conf
+$ sudo vim /etc/sysctl.d/60-oracle.conf
 ---
 # Oracle 11g XE kernel parameters 
 fs.file-max=6815744  
@@ -180,7 +181,7 @@ $ sudo service procps start
 
 $ sudo sysctl -q fs.file-max
 
-$ sudo pico /etc/rc2.d/S01shm_load
+$ sudo vim /etc/rc2.d/S01shm_load
 ---
 #!/bin/sh
 case "$1" in
@@ -198,7 +199,11 @@ esac
 ---
 
 $ sudo ln -s /usr/bin/awk /bin/awk 
-$ sudo mkdir /var/lock/subsys 
+ln: failed to create symbolic link '/bin/awk': File exists #this output is OK
+
+$ sudo mkdir /var/lock/subsys
+mkdir: cannot create directory ‘/var/lock/subsys’: File exists #this output is OK
+
 $ sudo touch /var/lock/subsys/listener
 
 ###### Install Oracle ###### 
@@ -231,8 +236,9 @@ Use https://localhost:5500/em to access Oracle Enterprise Manager for Oracle Dat
 $ vim ~/.bashrc
 
 #4.Add the following lines to the end of the file:
-```
-# Oracle Env setup
+
+#### Oracle Env setup ###### 
+---
 export ORACLE_HOME=/opt/oracle/product/21c/dbhomeXE
 
 export ORACLE_SID=XE
@@ -244,8 +250,7 @@ export ORACLE_BASE=/opt/oracle
 export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
 
 export PATH=$ORACLE_HOME/bin:$PATH
-
-```
+---
 
 # update bashrc
 $ source ~/.bashrc
@@ -312,7 +317,7 @@ sqlplus
 
 
 
-# Resource:
+### Resource:
 [Answers 2]
 https://askubuntu.com/questions/566734/how-to-install-oracle-11gr2-on-ubuntu-14-04
 
