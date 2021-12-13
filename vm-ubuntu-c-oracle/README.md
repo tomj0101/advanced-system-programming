@@ -56,6 +56,9 @@ $ sudo apt install jq -y
 #Install ab - Command Load Test tool with Apache util
 $ sudo apt install apache2-utils -y
 
+#copy to clickboard
+sudo apt install xclip -y
+
 #Install Code version control git
 ###------------------------------------------
 $ sudo apt install git -y
