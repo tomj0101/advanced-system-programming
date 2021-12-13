@@ -131,9 +131,8 @@ $ mv 'oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm?AuthParam=1638683626_b792d9b05
 
 # Pre-Configuration before install
 $ sudo vim /etc/hosts
-```
-10.128.0.6  odb-1.localdomain  odb-1 # Oracle Database server
-```
+---
+127.0.0.1 dev1.localdomain dev1 # Oracle Database server
 
 $ sudo apt install alien libaio1 unixodbc
 
