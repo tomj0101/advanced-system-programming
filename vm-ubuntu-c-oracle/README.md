@@ -117,6 +117,15 @@ pip3 --version
 # python3 -m http.server 8080
 ```
 
+### Browser-based frontend to gdb. Debug C, C++
+```
+apt install python3.9-venv
+pipx install gdbgui
+sudo /home/tomas/.local/pipx/venvs/gdbgui/bin/gdbgui -p 3333
+--- OR ---
+pip install gdbgui
+pip show gdbgui
+```
 
 ### Install Oracle Database XE (Oracle 18c XE )
 ```
