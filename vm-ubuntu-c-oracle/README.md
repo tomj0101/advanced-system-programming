@@ -121,7 +121,7 @@ pip3 --version
 ```
 apt install python3.9-venv
 pipx install gdbgui
-sudo /home/tomas/.local/pipx/venvs/gdbgui/bin/gdbgui -p 3333
+sudo /home/$USER/.local/pipx/venvs/gdbgui/bin/gdbgui -p 3333 -r
 --- OR ---
 pip install gdbgui
 pip show gdbgui
