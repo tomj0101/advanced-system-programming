@@ -22,9 +22,30 @@ open http://127.0.1.1:2222/
 open http://127.0.1.1:2222/dashboard
 
 
-debugging attached to process <PID> should run as root for this kernel feature
+Debugging attached to process <PID> should run as root for this kernel feature
 sudo gdbgui -p 2222 -r
 [V]-> click Attach to Process -> <PID | 418268>
+
+
+Using GDBSever
+sudo apt install gdbserver
+
+$ gdbserver localhost:2222 ./a.out 
+Process ./a.out created; pid = 732969
+Listening on port 2222
+kill -9 732965  # force to exit if CTRL+Z don't work, run this after you complete you debug code.
+
+
+$ gdbgui
+[V]-> click Connect to gdbserver -> <GBB_SERVER_IP:PORT | 127.0.0.1:2222 >
+
+Using rr(debugging)
+rr is a debugging tool for Linux designed to record and replay program execution. During the replay phase, rr provides an enhanced gdb debugging experience that supports reverse execution. rr was originally developed by Mozilla to debug Mozilla Firefox on commodity hardware and software.
+
+sudo apt install rr
+$ rr record -n ./a.out
+$ rr replay 
+(rr) run
 ```
 
 
