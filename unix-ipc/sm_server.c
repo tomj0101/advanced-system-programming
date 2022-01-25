@@ -12,16 +12,19 @@
 
 int main(int argc, char *argv[]){
 
-	char hostname[1024];
-	hostname[1023] = '\0';
+	char hostname[1024] = "";
+	//hostname[1023] = '\0';
 	gethostname(hostname, 1023);
 	//printf("hostname %s",hostname);
 
 	//char* msg_from_server = "Sending IPC Messages using Shared memory from Host ";
-	char msg_from_server[100];
+	char msg_from_server[100] = "";
 	strcat(msg_from_server, "Sending IPC Messages using Shared memory from Host ");
    	strcat(msg_from_server, hostname);
 
+	printf("%s\n",msg_from_server);
+
+	
 	int size_of_msg = strlen(msg_from_server);
 
 	//printf("%d \n",size_of_msg);	
