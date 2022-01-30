@@ -1,7 +1,7 @@
 //Pass Information between child process and parent process
 //In developer machine, active man commands like  'man fork' , run the next command.
 /*
-$ sudo 
+$ sudo unminimize 
 */
 #include <stdio.h> 
 #include <unistd.h>
