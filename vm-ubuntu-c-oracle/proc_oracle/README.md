@@ -17,4 +17,6 @@ code=ansi
 ```
 proc iname=sample2.pc oname=sample2.c parse=none code=ANSI_C
 gcc -c -o sample2 sample2.c
+
+ORA_CONN="<username>/<password>@<oracle-address>:<port>/<sid>" ./sample2
 ``` 
