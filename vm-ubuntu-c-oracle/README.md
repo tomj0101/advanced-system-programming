@@ -24,6 +24,14 @@ $ sudo apt update -y
 $ apt list --upgradable
 ```
 
+### man-db (Some cloud provide delivery the minimize without some important C man page, very important in the development process. )
+```
+$ sudo unminimize
+$ man fork
+$ man pipe
+$ man wait
+```
+
 ### Install video and AudiLib utils (command line different video format conversion)
 ```
 $ sudo apt install ffmpeg -y &&
