@@ -413,6 +413,7 @@ Socket:
 ```
 ldd - print shared object dependencies
 dev> ldd /bin/ls
+dev> ldd -v /bin/ls
 
 /bin/ls:
         libxcurses.so.1 =>      /usr/lib/hpux32/libxcurses.so.1
