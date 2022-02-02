@@ -24,20 +24,26 @@ int main(int argc, char *argv){
 		while(1){
 			printf("count value %d \n", count);
 			++count;
-			usleep(50000); //usleep - suspend execution for microsecond intervals
+			//usleep(50000); //usleep - suspend execution for microsecond intervals
 		
 		}
 	
 	}else{
-		sleep(1); //for get 1 second of print for child process
-		kill(pid, SIGSTOP); //pause the process execution
-	        printf("Pause\n");
+		int t; //time in second provide by user
+		do{
+			kill(pid, SIGSTOP); //pause the process execution
+			printf("Enter from 1-x second, enter 0(zero) to exit\n");
+			printf("Please provide the time in second: ");
+			scanf("%d",&t);
 
-		sleep(1);
-		kill(pid,SIGCONT); //resume/continue with the process execution
-		printf("resume/continue \n");
+			if(t > 0){
+				kill(pid, SIGCONT); //resume/continue with the process execution
+				sleep(t);
+				kill(pid, SIGSTOP);
+			}
+		
+		}while(t > 0);
 
-		sleep(1);
 		kill(pid, SIGKILL); //*** send the signal tio kill the child process
 		printf("child process was kill");
 
