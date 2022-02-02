@@ -13,7 +13,7 @@ int main(int argc, char *argv[]){
 	if(id == 0){
 		//child process
 		execlp("ping","ping","-c","3","google.com",NULL);
-		printf("this should not print in the terminal ***** \N ")
+		printf("this should not print in the terminal ***** \n ");
 	}else{
 		//parent proces
 		wait(NULL); //wait for all the child process
