@@ -67,3 +67,9 @@ sudo apt install ddd
 ddd
 ```
 
+### Commands to search word/math.h header inside all code file, and all directory. 
+```
+# We want to find all the #include <math.h> in a big trading code.
+$  echo "$(grep -r math.h)" > global-search-of-math.txt
+```
+
