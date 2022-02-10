@@ -72,4 +72,8 @@ ddd
 # We want to find all the #include <math.h> in a big trading code.
 $  echo "$(grep -r math.h)" > global-search-of-math.txt
 ```
+### count number of file in a directory
+```
+$ find .|wc -l
 
+```
