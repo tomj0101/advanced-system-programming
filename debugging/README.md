@@ -74,6 +74,9 @@ $  echo "$(grep -r math.h)" > global-search-of-math.txt
 
 # Same action but showing the line number
 $  echo "$(grep -nr math.h)" > global-search-of-math.txt
+
+# Looking for C functions - memcpy
+$  echo "$(grep -nr 'memcpy(')" >  global-search-of-memcpy.txt
 ```
 ### count number of file in a directory
 ```
