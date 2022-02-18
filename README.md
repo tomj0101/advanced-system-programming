@@ -422,6 +422,19 @@ dev> ldd -v /bin/ls
 
 nm - print name list of common object file.
 
+- sample of how use nm command
+cd advanced-system-programming/template/c-make-project
+make
+
+cd advanced-system-programming/template/c-make-project/obj
+nm main.o 
+                 U _GLOBAL_OFFSET_TABLE_
+0000000000000000 T main
+                 U puts
+0000000000000000 D VERSION
+
+
+
 objdump - display information from object files.
 
 addr2line - convert addresses into file names and line numbers.
