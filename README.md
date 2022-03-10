@@ -119,15 +119,15 @@ Firmware info:
 
 Platform info:
    Model:                  "ia64 hp Integrity BL890c i4 nPar"
-   Machine ID number:      77398900-da2f-11e2-8084-dee5468e3y7f
-   Machine serial number:  SGH319V9YY
+   Machine ID number:      11118900-da2f-11e2-1111-dee5468e1111
+   Machine serial number:  SGH1111111
 
 OS info:
-   Nodename:  PCPEPSVS
+   Nodename:  PCP11111
    Release:   HP-UX B.11.31
    Version:   U (unlimited-user license)
    Machine:   ia64
-   ID Number: 2000259378
+   ID Number: 2000251111
    vmunix _release_version:
 @(#) $Revision: vmunix:    B.11.31_LR FLAVOR=perf
 ```
