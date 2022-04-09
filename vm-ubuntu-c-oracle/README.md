@@ -32,6 +32,13 @@ $ man pipe
 $ man wait
 ```
 
+### Other setup
+```
+- Autostart program:
+$HOME/.config/autostart/
+/etc/xdg/autostart
+```
+
 ### Install video and AudiLib utils (command line different video format conversion)
 ```
 $ sudo apt install ffmpeg -y &&
