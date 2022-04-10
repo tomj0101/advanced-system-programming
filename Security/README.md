@@ -58,9 +58,9 @@ tom@vm:~$ pass init "123456....KEY"
 Password store initialized for 123456....KEY
 
 - Insert new password
-tom@vm1:~$ pass insert Personal/facebook.com
-Enter password for Personal/facebook.com: 
-Retype password for Personal/facebook.com: 
+tom@vm1:~$ pass insert personal/facebook.com
+Enter password for personal/facebook.com: 
+Retype password for personal/facebook.com: 
 
 - List my passwords
 tom@vm:~$ pass
@@ -69,11 +69,11 @@ Password Store
     └── facebook.com
     
 tom@vm:~$ cd ~/.password-store/
-tom@vm:~/.password-store$ ls Personal/
+tom@vm:~/.password-store$ ls personal/
 facebook.com.gpg
 
 - Get my website password
-tom@vm:~$ gpg -d ~/.password-store/Personal/facebook.com.gpg 
+tom@vm:~$ gpg -d ~/.password-store/personal/facebook.com.gpg 
 gpg: encrypted with 3072-bit RSA key, ID FB6F8DB64C9AA833, created 2022-04-10
       "tom@vm1 <tom@vm1>"
 abc123
