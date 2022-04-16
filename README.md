@@ -411,6 +411,13 @@ Socket:
 
 ### Unix/Linux Tools for debug
 ```
+Search the main function if you have hundres of file in different subdirectory, also can exclude dir like 
+grep -r "int main(" *
+OR
+grep -R --exclude-dir={folder1,folder2,folder3,headers, ext-libs-code} "int main(" * 
+
+
+
 ldd - print shared object dependencies
 dev> ldd /bin/ls
 dev> ldd -v /bin/ls
