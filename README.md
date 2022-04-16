@@ -124,12 +124,12 @@ Platform info:
 
 OS info:
    Nodename:  PCP11111
-   Release:   HP-UX B.11.31
+   Release:   HP-UX B.11.X
    Version:   U (unlimited-user license)
    Machine:   ia64
    ID Number: 2000251111
    vmunix _release_version:
-@(#) $Revision: vmunix:    B.11.31_LR FLAVOR=perf
+@(#) $Revision: vmunix:    B.11.31X FLAVOR=perf
 ```
 
 Linux Kernel
