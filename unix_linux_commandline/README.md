@@ -1,4 +1,6 @@
 # Unix and Linux Commandline
+### Don't forget tge basic
+read, echo, printf, loop, if, elfi  
 
 ### bc - An arbitrary precision calculator language
 ```
@@ -30,4 +32,20 @@ Math Library:
 
        j (n,x)
               The Bessel function of integer order n of x.
+```
+
+### cut - remove sections from each line of files
+```
+Display the  2 and 7 character from each line of text of the stdin
+$ cut -c 2,7 /dev/stdin
+Hello
+World
+how are you
+
+Expected Output
+e
+o
+oe
+
+Input (stdin)
 ```
