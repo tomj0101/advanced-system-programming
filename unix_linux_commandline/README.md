@@ -38,6 +38,8 @@ Math Library:
 ```
 Display the  2 and 7 character from each line of text of the stdin
 $ cut -c 2,7 /dev/stdin
+
+Input (stdin)
 Hello
 World
 how are you
@@ -47,5 +49,25 @@ e
 o
 oe
 
-Input (stdin)
+Display a range of characters starting at the 2 position of a string and ending at the 7 position
+$ cut -c 2-7 /dev/stdin
+
+Given a tab delimited file with several columns (tsv format) print the first three fields.
+$ cut -d $'\t' -f -3 /dev/stdin
+
+Print the characters from thirteenth position to the end.
+cut -c 13- /dev/stdin
+
+Given a sentence, identify and display its fourth word. Assume that the space (' ') is the only delimiter between words.
+$ cut -d ' ' -f 4 /dev/stdin
+
+Given a sentence, identify and display its first three words. Assume that the space (' ') is the only delimiter between words.
+$ cut -d ' ' -f -3 /dev/stdin
+$ cut -d ' ' -f 1-3 /dev/stdin
+both parameters are the same 1-3 and -3
+
+Given a tab delimited file with several columns (tsv format) print the fields from second fields to last field.
+$ cut -d $'\t' -f 2- /dev/stdin
+
+
 ```
