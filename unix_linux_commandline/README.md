@@ -93,3 +93,20 @@ tail -n 20 < /dev/stdin
 # Display the last 20 characters of an input file.
 tail -c 20 < /dev/stdin
 ```
+### tr - translate or delete characters
+```
+# In a given fragment of text, replace all parentheses   with box brackets  [] with ().
+tr '()' '[]'  </dev/stdin 
+#In: int i=(int)5.8
+#Out: int i=[int]5.8
+
+# In a given fragment of text, delete all the lowercase characters a-z.
+tr -d [:lower:] </dev/stdin
+# In: Hello
+# Out: H
+
+# In a given fragment of text, replace all sequences of multiple spaces with just one space.
+tr -s ' ' </dev/stdin
+# In: Wor  ld
+# Out: Wor ld
+```
