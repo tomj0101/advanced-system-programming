@@ -110,3 +110,14 @@ tr -s ' ' </dev/stdin
 # In: Wor  ld
 # Out: Wor ld
 ```
+
+
+### sort - sort lines of text files
+```
+# Given a text file, order the lines in lexicographical order.
+sort </dev/stdin
+
+# Given a text file, order the lines in reverse lexicographical order (i.e. Z-A instead of A-Z).
+sort -r </dev/stdin
+```
+
