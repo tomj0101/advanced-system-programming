@@ -71,3 +71,10 @@ $ cut -d $'\t' -f 2- /dev/stdin
 
 
 ```
+
+
+### head - output the first part of files
+```
+# Display the first 20 lines of an input file.
+head -n 20 < /dev/stdin
+```
