@@ -77,4 +77,10 @@ $ cut -d $'\t' -f 2- /dev/stdin
 ```
 # Display the first 20 lines of an input file.
 head -n 20 < /dev/stdin
+
+# Display the first 20 characters of an input file.
+head -c 20 < /dev/stdin
+
+# Display the lines (from line number 12 to 22, both inclusive) of a given text file.
+head -n 22 /dev/stdin | tail -n 11
 ```
