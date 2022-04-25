@@ -84,3 +84,12 @@ head -c 20 < /dev/stdin
 # Display the lines (from line number 12 to 22, both inclusive) of a given text file.
 head -n 22 /dev/stdin | tail -n 11
 ```
+
+### tail - output the last part of file
+```
+# Display the last 20 lines of an input file.
+tail -n 20 < /dev/stdin
+
+# Display the last 20 characters of an input file.
+tail -c 20 < /dev/stdin
+```
