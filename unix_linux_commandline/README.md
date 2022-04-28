@@ -119,5 +119,33 @@ sort </dev/stdin
 
 # Given a text file, order the lines in reverse lexicographical order (i.e. Z-A instead of A-Z).
 sort -r </dev/stdin
+
+# Using sort command to get numeric ascending order
+sort -n </dev/stdin
+1,2,3,4
+
+# Using sort command to get numeric descending/reverse
+sort -nr </dev/stdin
+4,3,2,1
+
+# Rearrange the rows of the table in descending order of the values for the average temperature in January (i.e, the mean temperature value provided in the second column)., 2nd column is the temperature, tab separated 
+#$ man sort
+# -n, --numeric-sort
+# -k, --key=KEYDEF, -k2 = 2nd column
+# -r, --reverse
+# -t, --field-separator=SEP
+sort -n -k2 -r -t $'\t'
+# Data
+#Albany, N.Y.    22.2    46.6    71.1    49.3    38.60    136    64.4    57
+#Albuquerque, N.M.    35.7    55.6    78.5    57.3    9.47    60    11.0    64
+
+# Column definition.
+#(a) the name of the city (b) the average monthly temperature in Jan (in Fahreneit). (c) the average monthly temperature in April (in Fahreneit). (d) the average monthly temperature in July (in Fahreneit). (e) the average monthly temperature in October (in Fahreneit).
+
+# now sort in ascending order by the 2nd column
+sort -n -k2  -t $'\t'
+
+# now sort using other separated
+sort -nr -k2  -t $'|'
 ```
 
