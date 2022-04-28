@@ -149,3 +149,34 @@ sort -n -k2  -t $'\t'
 sort -nr -k2  -t $'|'
 ```
 
+### uniq - report or omit repeated line
+```
+#Given a text file, remove the consecutive repetitions of any line.
+uniq </dev/stdin
+
+# Count the number of times each line repeats itself.
+# show the number of repetition
+# -c, --count
+# -i, --ignore-case
+# cut -b7- remove from 7 to N. -b, --bytes=LIST
+uniq -c | cut -b7-
+#input: 
+#  00
+#  00
+#output: 2 00
+
+# Given a text file, count the number of times each line repeats itself (only consider consecutive repetions). 
+# sed - stream editor for filtering and transforming text
+uniq -ci | sed 's/^[ \t]*//'
+
+# Given a text file, display only those lines which are not followed or preceded by identical replications.
+uniq -u </dev/stdin
+# Input
+# A00
+# 01
+# 01
+
+# Output
+# A00
+```
+
