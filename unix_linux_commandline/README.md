@@ -180,3 +180,24 @@ uniq -u </dev/stdin
 # A00
 ```
 
+###  paste — merge corresponding or subsequent lines of files
+```
+# You are given a CSV file where each row contains the name of a city and its state separated by a comma.
+$ paste -sd $'\t\t\n' < /dev/stdin
+# Input:
+# Albany, N.Y.
+# Albuquerque, N.M.
+# Anchorage, Alaska
+
+# Ouput:
+# Albany, N.Y.    Albuquerque, N.M.   Anchorage, Alaska
+
+$ paste -sd ';' </dev/stdin
+# output
+# Albany, N.Y.;Albuquerque, N.M.;Anchorage, Alaska;
+
+# Restructure the file so that three consecutive rows are folded into one line and are separated by semicolons.
+$ paste - - - -d ';'</dev/stdin
+#output
+#Albany, N.Y.;Albuquerque, N.M.;Anchorage, Alaska
+```
