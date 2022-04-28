@@ -200,4 +200,75 @@ $ paste -sd ';' </dev/stdin
 $ paste - - - -d ';'</dev/stdin
 #output
 #Albany, N.Y.;Albuquerque, N.M.;Anchorage, Alaska
+
+# Display the entire array of country names, with a space between each of them.
+a=($(cat < /dev/stdin))
+echo ${a[@]}
+# input:
+# Namibia
+# Nauru
+# Nepal
+
+# output:
+# Namibia Nauru Nepal
+```
+
+### Array
+```
+# Display the entire array of country names, with a space between each of them.
+a=($(cat < /dev/stdin))
+echo ${a[@]}
+# input:
+# Namibia
+# Nauru
+# Nepal
+
+# output:
+# Namibia Nauru Nepal
+
+# filter in array
+# From the given list, remove the names that contain 'a' or 'A' in them. If there are no names left after removing these characters, you should display a blank line.
+arr=($(cat </dev/stdin))
+echo ${arr[@]/*[aA]*/}
+
+#Output:
+# Niger
+
+# Print the element at index  of the array (one string).
+a=($(cat </dev/stdin))
+echo ${a[3]}
+
+# counter : A single integer - the number of elements in the array.
+wc -l </dev/stdin
+```
+
+
+### gawk - pattern scanning and processing language
+```
+# AVG
+awk '{avg=($2+$3+$4)/3; print $0, ":", (avg<50)?"FAIL":(avg<80)?"B":"A"}'
+#Input
+# A 25 27 50
+#B 35 37 75
+
+# outout
+# A 25 27 50 : FAIL
+#B 35 37 75 : FAIL
+
+```
+
+### grep - print lines matching a pattern
+
+```
+grep -viw 'that'
+
+# -v   : Invert the sense of matching
+# -i   : Ignore case distinctions
+# -w   : Match only those lines containing the whole word
+```
+
+### sed - stream editor for filtering and transforming text
+```
+# replace
+sed 's/the /this /'
 ```
