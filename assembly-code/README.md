@@ -9,4 +9,8 @@
 $ ./a.out
 $ echo $?
 0
+
+#include <stdlib.h>
+# return EXIT_SUCCESS; # equals to 0(Zero)
+# return EXIT_FAILURE; # equals to 1(One)
 ```
