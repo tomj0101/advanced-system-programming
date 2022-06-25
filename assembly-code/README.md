@@ -9,6 +9,9 @@ gcc -S main.c
 - OS: Linux, CPU: Intel(R) Core(TM) i5-6440HQ CPU @ 2.60GHz (get info using linux command "lscpu") - Laptop
 - File: main.s-linux-ubuntu-20.04-laptop-2.txt
 ---
+- OS: Linux, CPU: ARM, Model name: Cortex-A57 (get info using linux command "lscpu") - NVIDIA Jetson Nano
+- File: main.s-linux-ubuntu-arm-nvidia-jetson-nano.txt
+---
 - OS: Windows, CPU: Intel CORE i5 vPRO 10th Gen, Intel64 Family 6 Model 142 Stepping 12 GenuineIntel ~802 Mhz (get info using powershell command "systeminfo")
 - File: main.s-windows-thinkpad-laptop.txt
 ---
