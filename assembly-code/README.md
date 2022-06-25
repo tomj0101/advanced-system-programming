@@ -3,16 +3,15 @@
 - OS: Linux, CPU: Model name: Intel(R) Xeon(R) CPU E5-4627 v3 @ 2.60GHz  (get info using linux command "lscpu") - VM Server
 - File: main.s-linux-rhel-8-server.txt
 ---
+- OS: Linux, CPU: (get info using linux command "lscpu") - Ubuntu laptop (PENDING)
+- File: main.s-linux-rhel-8-server-2.txt
+---
 - OS: Windows, CPU: Intel CORE i5 vPRO 10th Gen, Intel64 Family 6 Model 142 Stepping 12 GenuineIntel ~802 Mhz (get info using powershell command "systeminfo")
 - File: main.s-windows-thinkpad-laptop.txt
-
-
-
+---
 - OS: OSX, CPU: Intel(R) Core(TM) i7-5557U CPU @ 3.10GHz. (get info using Terminal command "sysctl -n machdep.cpu.brand_string")
 - File: main.s-osx-macbook-pro-laptop.txt
-
-
-
+---
 - OS: OSX, CPU: Intel(R) Core(TM) i5-5257U CPU @ 2.70GHz (get info using Terminal command "sysctl -n machdep.cpu.brand_string")
 - File: main.s-osx-macbook-pro-laptop-2.txt
 
