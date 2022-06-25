@@ -11,6 +11,9 @@
 - OS: OSX, CPU: Intel(R) Core(TM) i7-5557U CPU @ 3.10GHz. (get info using Terminal command "sysctl -n machdep.cpu.brand_string")
 - File: main.s-osx-macbook-pro-laptop.txt
 
+- OS: OSX, CPU: Intel(R) Core(TM) i5-5257U CPU @ 2.70GHz (get info using Terminal command "sysctl -n machdep.cpu.brand_string")
+- File: main.s-osx-macbook-pro-laptop-2.txt
+
 #### Check the return value.
 ```
 $ ./a.out
