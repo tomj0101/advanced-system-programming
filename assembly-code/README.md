@@ -1,4 +1,7 @@
 # Assembly Code
+```
+gcc -S main.c
+```
 #### The first file is a comparation of how different look the assembly code in different platform.
 - OS: Linux, CPU: Model name: Intel(R) Xeon(R) CPU E5-4627 v3 @ 2.60GHz  (get info using linux command "lscpu") - VM Server
 - File: main.s-linux-rhel-8-server.txt
