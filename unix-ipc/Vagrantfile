@@ -12,6 +12,9 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
+  # System V, UNIX
+  # The project intends to deliver a System V family operating system which is binary-compatible with the Oracle products Solaris 11 and Solaris 11 Express.
+  # However, rather than being based on the OS/Net consolidation like OpenSolaris was, OpenIndiana is based on illumos.
   config.vm.box = "openindiana/hipster"
 
   # Disable automatic box update checking. If you disable this, then
