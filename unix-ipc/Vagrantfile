@@ -17,6 +17,9 @@ Vagrant.configure("2") do |config|
   # System V, UNIX
   # The project intends to deliver a System V family operating system which is binary-compatible with the Oracle products Solaris 11 and Solaris 11 Express.
   # However, rather than being based on the OS/Net consolidation like OpenSolaris was, OpenIndiana is based on illumos.
+  
+  # illumos is a Unix operating system which provides next-generation features for downstream distributions, 
+  # including advanced system debugging, next generation filesystem, networking, and virtualization options.
   config.vm.box = "openindiana/hipster"
   # ##########################################
 
