@@ -307,5 +307,18 @@ sudo apt install jq
 
 # yq - a lightweight and portable command-line YAML processor.
 ```
+In: cat application-prod.yml | yq e '.spring.devtools.restart.enabled'
+Out: false
 
+In: yq '.spring.devtools.restart.enabled' application-prod.yml
+Out: false
+
+vim application-prod.yml
+spring:
+  devtools:
+    restart:
+      enabled: false
+
+https://github.com/tomj0101/distributed-system/blob/main/1-ordersystem-monolithic/src/main/resources/config/application-prod.yml
+sudo apt install yq
 ```
