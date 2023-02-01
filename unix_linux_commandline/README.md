@@ -272,3 +272,40 @@ grep -viw 'that'
 # replace
 sed 's/the /this /'
 ```
+
+# jq - Command-line JSON processor.
+```
+In: jq '.images[1]' product.json
+Out: "https://i.dummyjson.com/data/products/11/2.jpg"
+
+In: jq '.rating' product.json 
+Out: 4.26
+
+vim product.json
+{
+  "id": 11,
+  "title": "perfume Oil",
+  "description": "Mega Discount, Impression of A...",
+  "price": 13,
+  "discountPercentage": 8.4,
+  "rating": 4.26,
+  "stock": 65,
+  "brand": "Impression of Acqua Di Gio",
+  "category": "fragrances",
+  "thumbnail": "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
+  "images": [
+    "https://i.dummyjson.com/data/products/11/1.jpg",
+    "https://i.dummyjson.com/data/products/11/2.jpg",
+    "https://i.dummyjson.com/data/products/11/3.jpg",
+    "https://i.dummyjson.com/data/products/11/thumbnail.jpg"
+  ]
+}
+
+sudo dnf install jq 
+sudo apt install jq 
+```
+
+# yq - a lightweight and portable command-line YAML processor.
+```
+
+```
