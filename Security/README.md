@@ -85,3 +85,38 @@ Compatible Clients:
 - browserpass: Chrome plugin
 - Pass4Win: Windows client
 ```
+
+
+### ClamAV.
+ClamAV® is an open-source antivirus engine for detecting trojans, viruses, malware & other malicious threats.
+```
+$ sudo apt install clamav
+$ sudo freshclam
+$ clamscan --help
+
+$ time clamscan -r -i --bell ~/Downloads/
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8653189
+Engine version: 0.103.6
+Scanned directories: 821
+Scanned files: 4750
+Infected files: 0
+Data scanned: 183.81 MB
+Data read: 64.74 MB (ratio 2.84:1)
+Time: 79.738 sec (1 m 19 s)
+Start Date: 2023:02:19 18:30:16
+End Date:   2023:02:19 18:31:36
+
+real	1m19.752s
+user	1m16.226s
+sys	0m2.700s
+
+
+$ clamscan -r --remove # Don't use --remove because can remove good windows .exe
+
+- Install Desktop app for manage ClamAV
+$ sudo apt update
+$ sudo apt install clamtk
+
+```
