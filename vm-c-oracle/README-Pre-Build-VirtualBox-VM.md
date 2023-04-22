@@ -247,11 +247,16 @@ ref: https://blogs.oracle.com/wim/post/installing-visual-studio-code-on-oracle-l
     $ cd ~/Documents
     $ mkdir Ebank
     $ proc dbconn.pc
-    $ gcc dbconn.c -o dbconn.bin
+
+    # without makefile
+    $ gcc dbconn.c -o dbconn.bin -L$ORACLE_HOME/lib -lclntsh -m64
     $ ./dbconn.bin
 
+    # with makefile
+    make -f dbconn.mk
+
     -- OR DO ALL IN ONE --
-    proc dbconn.pc && gcc dbconn.c -o dbconn.bin && ./dbconn.bin
+    proc dbconn.pc && gcc dbconn.c -o dbconn.bin -L$ORACLE_HOME/lib -lclntsh -m64 && ./dbconn.bin
 
     $ make -f dbconn.mk
 

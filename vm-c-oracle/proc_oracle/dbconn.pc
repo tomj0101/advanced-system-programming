@@ -17,13 +17,11 @@ void main(){
     printf("Enter the password: \n");
     scanf("%s",pwd);
 
-    /*exec sql connect :uname identified by :pwd;
+    exec sql connect :uname identified by :pwd;
 
     if(sqlca.sqlcode == 0)
         printf("connection successfully..\n");
     else
         printf("Error Code %d\n Error msg: %s",sqlca.sqlcode, sqlca.sqlerrm.sqlerrmc);
-
-*/
 
 }
