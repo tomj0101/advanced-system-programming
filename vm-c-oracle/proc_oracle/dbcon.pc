@@ -1,0 +1,29 @@
+exec sql begin declare section;
+
+char uname[20], pwd[20];
+
+exec sql end declare section;
+
+exec sql include sqlca;
+
+#include<stdio.h>
+#include<stdlib.h>
+
+void main(){
+    printf("Sample 1 = Test connection to database \n");
+    printf("Enter the username: \n");
+    scanf("%s",uname);
+
+    printf("Enter the password: \n");
+    scanf("%s",pwd);
+
+    /*exec sql connect :uname identified by :pwd;
+
+    if(sqlca.sqlcode == 0)
+        printf("connection successfully..\n");
+    else
+        printf("Error Code %d\n Error msg: %s",sqlca.sqlcode, sqlca.sqlerrm.sqlerrmc);
+
+*/
+
+}
