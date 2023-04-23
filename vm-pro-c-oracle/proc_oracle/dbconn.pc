@@ -1,6 +1,6 @@
 exec sql begin declare section;
 
-char uname[20], pwd[20], db_name[20];
+char uname[20], pwd[20], db_n[20];
 
 exec sql end declare section;
 
@@ -21,7 +21,8 @@ void main(){
     printf("Enter the DataBase: \n");
     scanf("%s",db_name);
 
-    exec sql connect :uname identified by :pwd at db_name using db_name; 
+    exec sql declare DB_NAME database;
+    exec sql connect :uname identified by :pwd at DB_NAME using :db_n;
 
     if(sqlca.sqlcode == 0)
         printf("connection successfully..\n");
