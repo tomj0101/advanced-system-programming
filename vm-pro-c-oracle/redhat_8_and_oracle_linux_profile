@@ -1,10 +1,11 @@
 # .bash_profile
+# $ source redhat_8_and_oracle_linux_profile
 # redhat 8
 DEV=Tom
 # Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-        . ~/.bashrc
-fi
+#if [ -f ~/.bashrc ]; then
+#        . ~/.bashrc
+#fi
 
 # User specific environment and startup programs
 # .profile in UNIX, .bash_profile in linux
@@ -17,16 +18,18 @@ export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 
 # Profile for Linux & Docker Build process: Multistage: BEGIN
 # User specific aliases and functions
-export ORACLE_HOME=/opt/oracle/product/19.0.0/client # Tom
-export TNS_ADMIN=/opt/oracle/admin/network/admin #Tom
+export ORACLE_HOME=/opt/oracle/product/23c/dbhomeFree   # Oracle Linux Pre-Build VM
+#export ORACLE_HOME=/opt/oracle/product/19.0.0/client   # RedHat Linux 8
+#export TNS_ADMIN=/opt/oracle/admin/network/admin       # RedHat Linux 8
 export LD_LIBRARY_PATH=/lib:/lib64:/usr/lib:/usr/lib64:$ORACLE_HOME/lib
 export SHLIB_PATH=$SHLIB_PATH:/opt/mqm/lib64
 export PATH=$PATH:$ORACLE_HOME/bin:/usr/lib/java/bin
-export JAVA_HOME=/usr/lib/jvm/java
+#export JAVA_HOME=/usr/lib/jvm/java                     # RedHat Linux 8
+export JAVA_HOME=/opt/oracle/product/23c/dbhomeFree/jdk # Oracle Linux Pre-Build VM
 export NOTIFICATION_LIST=tom@mail.com
 
 ######## Begin: Developer #######
 export PATH=${PATH}:/opt/ansic/bin:/opt/ansic/lbin:/usr/include:/opt/ansic/include:${ORACLE_HOME}/bin:.
-export SHLIB_PATH=/usr/lib:${ORACLE_HOME}/lib:/opt/java1.3/jre/lib/PA_RISC #Tom
+export SHLIB_PATH=/usr/lib:${ORACLE_HOME}/lib:${JAVA_HOME}/jre #Tom
 
 ######## End: Developer #######
