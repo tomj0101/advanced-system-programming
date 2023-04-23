@@ -1,0 +1,40 @@
+
+exec sql begin declare section;
+
+char uname[20]="hr/oracle";
+char db_n[20]="freepdb1";
+
+exec sql end declare section;
+
+exec sql include sqlca;
+
+#include<stdio.h>
+#include<stdlib.h>
+
+void main(){
+
+    char name[20];
+    printf("Sample 1 = Test update to database \n");
+    printf("val1: old value \n");
+    scanf("%s",val1);
+
+    printf("val2: new value \n");
+    scanf("%s",val2);
+
+    exec sql declare DB_NAME database;
+    exec sql connect :uname at DB_NAME using :db_n;
+
+    if(sqlca.sqlcode == 0)
+        printf("connection successfully..\n");
+	
+	exec sql update dept set loc: val2 where loc: val1; 
+	if(sqlca.sqlcode){
+		printf("Update success %s\n",name);
+	} else{
+		printf("query failed to execution..,val2.");
+	}
+	
+    else
+        printf("Error Code %d\n Error msg: %s",sqlca.sqlcode, sqlca.sqlerrm.sqlerrmc);
+
+}
