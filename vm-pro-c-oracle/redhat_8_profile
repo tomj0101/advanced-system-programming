@@ -1,0 +1,32 @@
+# .bash_profile
+# redhat 8
+DEV=Tom
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+# .profile in UNIX, .bash_profile in linux
+
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+export PATH
+
+# Fix Azure Artifacs upload issue
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+
+# Profile for Linux & Docker Build process: Multistage: BEGIN
+# User specific aliases and functions
+export ORACLE_HOME=/opt/oracle/product/19.0.0/client # Tom
+export TNS_ADMIN=/opt/oracle/admin/network/admin #Tom
+export LD_LIBRARY_PATH=/lib:/lib64:/usr/lib:/usr/lib64:$ORACLE_HOME/lib
+export SHLIB_PATH=$SHLIB_PATH:/opt/mqm/lib64
+export PATH=$PATH:$ORACLE_HOME/bin:/usr/lib/java/bin
+export JAVA_HOME=/usr/lib/jvm/java
+export NOTIFICATION_LIST=tom@mail.com
+
+######## Begin: Developer #######
+export PATH=${PATH}:/opt/ansic/bin:/opt/ansic/lbin:/usr/include:/opt/ansic/include:${ORACLE_HOME}/bin:.
+export SHLIB_PATH=/usr/lib:${ORACLE_HOME}/lib:/opt/java1.3/jre/lib/PA_RISC #Tom
+
+######## End: Developer #######
