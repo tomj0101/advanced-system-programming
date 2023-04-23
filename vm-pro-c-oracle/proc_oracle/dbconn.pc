@@ -1,3 +1,4 @@
+
 exec sql begin declare section;
 
 char uname[20], pwd[20], db_n[20];
@@ -19,7 +20,7 @@ void main(){
 
 
     printf("Enter the DataBase: \n");
-    scanf("%s",db_name);
+    scanf("%s",db_n);
 
     exec sql declare DB_NAME database;
     exec sql connect :uname identified by :pwd at DB_NAME using :db_n;
