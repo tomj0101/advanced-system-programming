@@ -241,6 +241,12 @@ ref: https://blogs.oracle.com/wim/post/installing-visual-studio-code-on-oracle-l
 
 ```
 
+### Install Full C/C++ Developer package
+RHEL / CentOS Linux Install Core Development Tools Automake, Gcc (C/C++), Perl, Python & Debuggers
+```
+sudo yum group install "Development Tools"
+
+```
 
 ### Samples
 ```
@@ -249,7 +255,7 @@ ref: https://blogs.oracle.com/wim/post/installing-visual-studio-code-on-oracle-l
     $ proc dbconn.pc
 
     # without makefile
-    $ gcc dbconn.c -o dbconn.bin -L$ORACLE_HOME/lib -lclntsh -m64
+    $ gcc -g dbconn.c -o dbconn.bin -L$ORACLE_HOME/lib -lclntsh -m64
     $ ./dbconn.bin
 
     # with makefile
@@ -259,6 +265,19 @@ ref: https://blogs.oracle.com/wim/post/installing-visual-studio-code-on-oracle-l
     proc dbconn.pc && gcc dbconn.c -o dbconn.bin -L$ORACLE_HOME/lib -lclntsh -m64 && ./dbconn.bin
 
     $ make -f dbconn.mk
+
+    $ gdb dbselect.bin
+    brekpoint
+    (gdb) b main
+    (gdb) b 300
+    (gdb) start
+    next
+    (gdb) n
+    continue exec until next breakpoint
+    (gdb) c
+    (gdb) p dept_id
+    set value to variable
+    (gdb) set name="Tom"
 
 
 ```

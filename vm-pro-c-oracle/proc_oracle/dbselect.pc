@@ -1,42 +1,48 @@
-
-exec sql begin declare section;
+EXEC SQL begin declare section;
 
 char uname[20]="hr/oracle";
 char db_n[20]="freepdb1";
-char id_hr;
+int dept_id;
+char name[20];
 
-exec sql end declare section;
+EXEC SQL end declare section;
 
-exec sql include sqlca;
+EXEC SQL include sqlca;
 
 #include<stdio.h>
 #include<stdlib.h>
 
 void main(){
 
-    char name[20];
+
     printf("Sample 1 = Test select to database \n");
-    printf("Enter ID: \n");
-    scanf("%s",id_hr);
 
-    printf("Enter the DataBase: \n");
-    scanf("%s",db_n);
+    EXEC SQL declare DB_NAME database;
+    EXEC SQL connect :uname at DB_NAME using :db_n;
 
-    exec sql declare DB_NAME database;
-    exec sql connect :uname at DB_NAME using :db_n;
-
-    if(sqlca.sqlcode == 0)
+    if(sqlca.sqlcode == 0){
         printf("connection successfully..\n");
-	
-    	printf("Enter ID..:\n");
-	exec sql select name into :name from hrtable where id = hr_id;
-	if(sqlca.sqlcode){
-		printf("Name is %s\n",name);
-	} else{
-		printf("query failed to execution...");
-	}
-	
-    else
+
+        printf("Enter Department ID: \n");
+        scanf("%d",&dept_id); //pass-by references/pointer
+
+        exec sql SELECT DEPARTMENT_NAME into :name 
+                 FROM DEPARTMENTS 
+                 WHERE DEPARTMENT_ID= :dept_id;
+        if(sqlca.sqlcode){
+                printf("Department Name is %s\n",name);
+        } else{
+                printf("query failed to execution...");
+        }
+        EXEC SQL COMMIT WORK RELEASE;
+    }else{
         printf("Error Code %d\n Error msg: %s",sqlca.sqlcode, sqlca.sqlerrm.sqlerrmc);
+    }
 
 }
+
+/*
+proc dbselect.pc
+gcc -g dbselect.c -o dbselect.bin -L$ORACLE_HOME/lib -lclntsh -m64
+./dbselect.bin
+*/

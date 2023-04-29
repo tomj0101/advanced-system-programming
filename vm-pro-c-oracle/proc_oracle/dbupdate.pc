@@ -3,6 +3,7 @@ exec sql begin declare section;
 
 char uname[20]="hr/oracle";
 char db_n[20]="freepdb1";
+char name[20];
 
 exec sql end declare section;
 
@@ -13,7 +14,7 @@ exec sql include sqlca;
 
 void main(){
 
-    char name[20];
+
     printf("Sample 1 = Test update to database \n");
     printf("val1: old value \n");
     scanf("%s",val1);
@@ -38,3 +39,8 @@ void main(){
         printf("Error Code %d\n Error msg: %s",sqlca.sqlcode, sqlca.sqlerrm.sqlerrmc);
 
 }
+/*
+proc dbupdate.pc
+gcc dbupdate.c -o dbupdate.bin -L$ORACLE_HOME/lib -lclntsh -m64
+./dbupdate.bin
+*/

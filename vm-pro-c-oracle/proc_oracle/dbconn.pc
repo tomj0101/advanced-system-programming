@@ -31,3 +31,7 @@ void main(){
         printf("Error Code %d\n Error msg: %s",sqlca.sqlcode, sqlca.sqlerrm.sqlerrmc);
 
 }
+/*
+proc dbconn.pc
+gcc dbconn.c -o dbconn.bin -L$ORACLE_HOME/lib -lclntsh -m64
+*/
