@@ -34,8 +34,8 @@ export PATH=$PATH:$JAVA_HOME/bin
 
 ### docker file
 ```
-docker build -t tom/sonarcpp:1.0 .
-docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 tom/sonarcpp:1.0
+docker build -t tom/sonarcpp:2.0 .
+docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 tom/sonarcpp:2.0
 
 docker pull timx/sonarqube-cxx
 docker run -d --name sonarqube-cxx -p 9000:9000 -p 9092:9092 timx/sonarqube-cxx

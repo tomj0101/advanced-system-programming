@@ -10,7 +10,7 @@ Create a Token
 User > My Account > Security
 http://localhost:9000/account/security/
 
-export SONAR_TOKEN="sqa_2decb262fff5e160daad5f1336d74261c836df5f"
+export SONAR_TOKEN="329f05fe7aca13bfb8fa52cdf0ea36d8f55086d7"
 
 Run the scanner
 /var/opt/sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner
