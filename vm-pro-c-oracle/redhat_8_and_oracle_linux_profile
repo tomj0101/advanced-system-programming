@@ -1,21 +1,20 @@
 # .bash_profile
 # $ source redhat_8_and_oracle_linux_profile
 # redhat 8
-DEV=Tom
 # Get the aliases and functions
 #if [ -f ~/.bashrc ]; then
 #        . ~/.bashrc
 #fi
 
 # User specific environment and startup programs
-# .profile in UNIX, .bash_profile in linux
-
+DEV=Tom
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 export PATH
 
 # Fix Azure Artifacs upload issue
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 
+# /opt/oracle/product/23c/dbhomeFree
 # Profile for Linux & Docker Build process: Multistage: BEGIN
 # User specific aliases and functions
 export ORACLE_HOME=/opt/oracle/product/23c/dbhomeFree   # Oracle Linux Pre-Build VM
@@ -25,7 +24,7 @@ export LD_LIBRARY_PATH=/lib:/lib64:/usr/lib:/usr/lib64:$ORACLE_HOME/lib
 export SHLIB_PATH=$SHLIB_PATH:/opt/mqm/lib64
 export PATH=$PATH:$ORACLE_HOME/bin:/usr/lib/java/bin
 #export JAVA_HOME=/usr/lib/jvm/java                     # RedHat Linux 8
-export JAVA_HOME=/opt/oracle/product/23c/dbhomeFree/jdk # Oracle Linux Pre-Build VM
+export JAVA_HOME=/home/oracle/java/jdk-11.0.19 # Oracle Linux Pre-Build VM
 export NOTIFICATION_LIST=tom@mail.com
 
 ######## Begin: Developer #######
