@@ -34,4 +34,15 @@ void main(){
 /*
 proc dbconn.pc
 gcc dbconn.c -o dbconn.bin -L$ORACLE_HOME/lib -lclntsh -m64
+
+./dbconn.bin 
+Sample 1 = Test connection to database 
+Enter the username: 
+hr
+Enter the password: 
+oracle
+Enter the DataBase: 
+freepdb1
+connection successfully..
+
 */
