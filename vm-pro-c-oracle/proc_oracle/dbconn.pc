@@ -45,4 +45,6 @@ Enter the DataBase:
 freepdb1
 connection successfully..
 
+more info about the Pre-Build VB:
+file:///opt/oracle/userhome/oracle/Desktop/Oracle%20Database%2023c%20Free%20-%20Developer%20Release.html
 */
